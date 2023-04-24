@@ -51,3 +51,9 @@ questions:
         label: CA Bundle From Existing Secret
         type: string
         required: true
+      - variable: podDistributionBudget.enabled
+        default: false
+        description: Enable PodDistributionBudgets for the gMSA webhook
+        label: Boolean
+        type: boolean
+        required: false

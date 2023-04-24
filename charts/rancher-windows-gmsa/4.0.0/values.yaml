@@ -39,4 +39,5 @@ podSecurityContext:
 securityContext: {}
 
 tolerations: []
-
+podDisruptionBudget:
+  enabled: false
