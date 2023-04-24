@@ -11,7 +11,7 @@ annotations:
   catalog.cattle.io/rancher-version: '>= 2.7.0-0 < 2.8.0-0'
   catalog.cattle.io/release-name: rancher-windows-gmsa
 apiVersion: v2
-appVersion: 0.6.1
+appVersion: 0.3.0
 description: Windows GMSA Configuration
 icon: https://charts.rancher.io/assets/logos/windows-gmsa.svg
 keywords:
