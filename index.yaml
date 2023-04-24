@@ -13010,7 +13010,7 @@ entries:
       catalog.cattle.io/certified: rancher
       catalog.cattle.io/display-name: Windows GMSA
       catalog.cattle.io/experimental: "true"
-      catalog.cattle.io/kube-version: '>= 1.21.0-0 < 1.26.0-0'
+      catalog.cattle.io/kube-version: '>= 1.21.0-0'
       catalog.cattle.io/namespace: cattle-windows-gmsa-system
       catalog.cattle.io/os: windows
       catalog.cattle.io/permits-os: linux,windows
@@ -13019,9 +13019,9 @@ entries:
       catalog.cattle.io/release-name: rancher-windows-gmsa
     apiVersion: v2
     appVersion: 0.3.0
-    created: "2023-04-24T11:47:39.553843-04:00"
+    created: "2023-04-24T13:42:05.451807-04:00"
     description: Windows GMSA Configuration
-    digest: 613dbe6b146600a14d04449f66941f6072fa78ff0d3f0220ec072b2e658854b3
+    digest: 6cf9142119a2c180b70530d35f6fb9357d95b3dec27394e2d66ab4af1e8b38fe
     icon: https://charts.rancher.io/assets/logos/windows-gmsa.svg
     keywords:
     - Windows
