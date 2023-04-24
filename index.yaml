@@ -13019,9 +13019,9 @@ entries:
       catalog.cattle.io/release-name: rancher-windows-gmsa
     apiVersion: v2
     appVersion: 0.3.0
-    created: "2023-04-24T14:34:16.852007-04:00"
+    created: "2023-04-25T10:31:19.862888-04:00"
     description: Windows GMSA Configuration
-    digest: 6bd123211a25350e68291467472c6505b12888a06606291824a6047f574e3299
+    digest: 6a41bfce0e51fe3449aca05855336fe3cf907d4c78ccc6c84915112809c0519a
     icon: https://charts.rancher.io/assets/logos/windows-gmsa.svg
     keywords:
     - Windows

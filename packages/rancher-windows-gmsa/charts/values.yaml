@@ -41,3 +41,5 @@ securityContext: {}
 tolerations: []
 podDisruptionBudget:
   enabled: false
+  minAvailable: 1
+  maxUnavailable: 1
