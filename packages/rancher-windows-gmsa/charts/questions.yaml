@@ -51,3 +51,23 @@ questions:
         label: CA Bundle From Existing Secret
         type: string
         required: true
+  - variable: podDisruptionBudget.enabled
+    default: true
+    description: Create a Pod Distribution Budget for the webhook
+    label: Create a Pod Distribution Budget for the webhook
+    type: boolean
+    group: "Pod Distribution Budget"
+    show_subquestion_if: true
+    subquestions:
+      - variable: podDisruptionBudget.minAvailable
+        default: 1
+        description: The minimum number of pods that need to be available
+        label: Minimum Pods
+        type: integer
+        required: true
+      - variable: podDisruptionBudget.maxUnavailable
+        default: 1
+        description: The maximum number of pods that can be unavailable
+        label: Maximum unavailable Pods
+        type: integer
+        required: true
