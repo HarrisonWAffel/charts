@@ -17,8 +17,8 @@ credential:
     sid: "" #SID of GMSA
 
 image:
-  repository: rancher/mirrored-sigwindowstools-k8s-gmsa-webhook
-  tag: v0.3.0
+  repository: registry.k8s.io/gmsa-webhook/k8s-gmsa-webhook
+  tag: v0.6.1
   imagePullPolicy: IfNotPresent
 
 global:
