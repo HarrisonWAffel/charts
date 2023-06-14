@@ -10,7 +10,7 @@ credential:
   enabled: true
   hostAccountConfig:
     pluginGUID: ""
-    portableCcgVersion: 1
+    portableCcgVersion: "1"
     pluginInput: ""
   domainJoinConfig:
     dnsName: ""  #DNS Domain Name
