@@ -13019,9 +13019,9 @@ entries:
       catalog.cattle.io/release-name: rancher-windows-gmsa
     apiVersion: v2
     appVersion: 0.3.0
-    created: "2023-06-14T11:17:41.900566-04:00"
+    created: "2023-06-14T11:25:26.302416-04:00"
     description: Windows GMSA Configuration
-    digest: bf897de37bef12b43ad93ab133da63be6f9735e51cfc38ad7484376c00359802
+    digest: 87065e64dda4ae60e25961c352342cea6c877da4d801eb341fe783760d43b210
     icon: https://charts.rancher.io/assets/logos/windows-gmsa.svg
     keywords:
     - Windows
@@ -13210,9 +13210,9 @@ entries:
       catalog.cattle.io/namespace: cattle-windows-gmsa-system
       catalog.cattle.io/release-name: rancher-windows-gmsa-crd
     apiVersion: v1
-    created: "2023-06-14T11:17:41.902152-04:00"
+    created: "2023-06-14T11:25:26.303185-04:00"
     description: Installs the CRDs for Windows GMSA.
-    digest: 70abf96784773e1b667e6b5b17b03051c45a2fc3e2e3efda86fc28e09fd85298
+    digest: 4c459ab12d44d85eb8bdc881fd1e963387514d7a5afb35cc87c9508ed36146d2
     name: rancher-windows-gmsa-crd
     type: application
     urls:

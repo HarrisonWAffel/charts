@@ -45,7 +45,7 @@ questions:
       - variable: credential.hostAccountConfig.portableCcgVersion
         label: this should be 1
         description: this should be 1
-        type: string
+        type: integer
         required: true
       - variable: credential.hostAccountConfig.pluginInput
         label: plugin input
