@@ -39,12 +39,12 @@ questions:
         required: true
       - variable: credential.hostAccountConfig.pluginGUID
         label: Plugin GUID
-        description: plugin guid
+        description: The GUID of the CCG Plugin to be used when processing this Credential Spec
         type: string
         required: true
       - variable: credential.hostAccountConfig.pluginInput
-        label: plugin input
-        description: plugin input
+        label: Plugin Input
+        description: The input given to the plugin. Refer to specific plugin documentation on expected format
         type: string
         required: true
   - variable: certificates.certManager.enabled
