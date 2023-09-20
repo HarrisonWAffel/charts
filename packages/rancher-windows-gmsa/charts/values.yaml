@@ -8,13 +8,18 @@ certificates:
 
 credential:
   enabled: true
+  enableNonJoined: false # Populates hostAccountConfig field
+  hostAccountConfig:
+    pluginGUID: "" # CCG Plugin GUID
+    portableCcgVersion: "1" # This needs to equal the current version of CCG which right now is '1'
+    pluginInput: "" # Format of this field is dependent upon specific CCG Plugin
   domainJoinConfig:
     dnsName: ""  #DNS Domain Name
     dnsTreeName: "" #DNS Domain Name Root
-    guid: ""  #GUID
+    guid: ""  # Active Directory Domain GUID
     machineAccountName: "" #Username of the GMSA account
-    netBiosName: ""  #NETBIOS Domain Name
-    sid: "" #SID of GMSA
+    netBiosName: ""  #NETBIOS name for the Active Directory Domain
+    sid: "" #SID the Active Directory Domain
 
 image:
   repository: rancher/mirrored-sigwindowstools-k8s-gmsa-webhook
@@ -39,4 +44,7 @@ podSecurityContext:
 securityContext: {}
 
 tolerations: []
-
+podDisruptionBudget:
+  enabled: false
+  minAvailable:
+  maxUnavailable:
