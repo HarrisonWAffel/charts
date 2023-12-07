@@ -216,6 +216,7 @@ sync:
     - 1.8.15
     - 1.8.9
     - 1.9.3
+    - v1.9.9
 - source: docker.io/rancher/fluent-bit-out-syslog
   target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/fluent-bit-out-syslog'
   type: repository
