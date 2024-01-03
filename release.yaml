@@ -30,3 +30,7 @@ rancher-cis-benchmark:
   - 6.0.0-rc1
 rancher-cis-benchmark-crd:
   - 6.0.0-rc1
+rancher-windows-gmsa:
+  - 104.0.0+up0.3.0
+rancher-windows-gmsa-crd:
+  - 104.0.0+up0.3.0
