@@ -3,8 +3,8 @@
 # Declare variables to be passed into your templates.
 
 image:
-  registry: ghcr.io
-  repository: prometheus-community/windows-exporter
+  registry: haffel2.cp-dev.rancher.space
+  repository: mirrored-prometheus-windows-exporter
   # Overrides the image tag whose default is {{ printf "v%s" .Chart.AppVersion }}
   tag: "0.25.1"
   pullPolicy: IfNotPresent
