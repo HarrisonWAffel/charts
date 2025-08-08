@@ -1,0 +1,5 @@
+url: https://github.com/rancher/turtles.git
+chartRepoBranch: main
+subdirectory: charts/rancher-turtles
+workingDir: rancher-turtles
+version: 108.0.0

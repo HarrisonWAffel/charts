@@ -1,0 +1,19 @@
+--- rancher-turtles-original/values.yaml
++++ rancher-turtles/values.yaml
+@@ -8,13 +8,13 @@
+ # rancherTurtles: Sets up the cluster management controller.
+ rancherTurtles:
+   # image: Controller container image.
+-  image: controller
++  image: registry.rancher.com/rancher/rancher/turtles
+   # imageVersion: Image tag.
+-  imageVersion: v0.0.0
++  imageVersion: v0.22.0
+   # imagePullPolicy: Specify image pull policy.
+   imagePullPolicy: IfNotPresent
+   # namespace: Select namespace for Turtles to run.
+-  namespace: rancher-turtles-system
++  namespace: cattle-system
+   # managerArguments: Extra args for the controller.
+   managerArguments: []
+   # imagePullSecrets: Secrets for private registries.
