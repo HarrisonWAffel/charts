@@ -14,8 +14,33 @@ spec:
       labels:
         app.kubernetes.io/name: system-upgrade-controller
     spec:
-      affinity: {}
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: "kubernetes.io/os"
+                    operator: NotIn
+                    values:
+                      - windows
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - preference:
+              matchExpressions:
+                - key: "node-role.kubernetes.io/control-plane"
+                  operator: In
+                  values:
+                    - "true"
+            weight: 100
+          - preference:
+              matchExpressions:
+                - key: "node-role.kubernetes.io/master"
+                  operator: In
+                  values:
+                    - "true"
+            weight: 100
+      tolerations:
+        - operator: Exists
       containers:
-        - name: system-upgrade-controller
+        - name: bad
           image: {{ template "system_default_registry" . }}{{ .Values.systemUpgradeController.image.repository }}:{{ .Values.systemUpgradeController.image.tag }}
           imagePullPolicy: Always
