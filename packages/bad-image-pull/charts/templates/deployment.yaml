@@ -15,41 +15,6 @@ spec:
         app.kubernetes.io/component: controller
         app.kubernetes.io/name: system-upgrade-controller
     spec:
-      affinity:
-        nodeAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-              - matchExpressions:
-                  - key: "kubernetes.io/os"
-                    operator: NotIn
-                    values:
-                      - windows
-          preferredDuringSchedulingIgnoredDuringExecution:
-          - preference:
-              matchExpressions:
-                - key: "node-role.kubernetes.io/control-plane"
-                  operator: In
-                  values:
-                    - "true"
-            weight: 100
-          - preference:
-              matchExpressions:
-                - key: "node-role.kubernetes.io/master"
-                  operator: In
-                  values:
-                    - "true"
-            weight: 100
-        podAntiAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            - topologyKey: "kubernetes.io/hostname"
-              labelSelector:
-                matchExpressions:
-                  - key: "app.kubernetes.io/name"
-                    operator: "In"
-                    values:
-                      - "system-upgrade-controller"
-      tolerations:
-        - operator: Exists
       serviceAccountName: system-upgrade-controller
       containers:
         - name: system-upgrade-controller
