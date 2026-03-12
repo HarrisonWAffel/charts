@@ -6,7 +6,7 @@ annotations:
   catalog.cattle.io/namespace: cattle-system
   catalog.cattle.io/os: linux
   catalog.cattle.io/permits-os: linux,windows
-  catalog.cattle.io/rancher-version: '>= 2.14.0-0 < 2.15.0-0'
+  catalog.cattle.io/rancher-version: '>= 2.12.0-0 < 2.15.0-0'
   catalog.cattle.io/release-name: bad-image-pull
 apiVersion: v1
 appVersion: v0.17.0
