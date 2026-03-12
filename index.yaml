@@ -12,9 +12,9 @@ entries:
       catalog.cattle.io/release-name: bad-image-pull
     apiVersion: v1
     appVersion: v0.17.0
-    created: "2026-03-12T15:13:30.344154-04:00"
+    created: "2026-03-12T15:17:13.123471-04:00"
     description: A test for directly injecting image pull contents into a helm chart
-    digest: e568da5c278b11c05bc7ffd744df59ebe1b9605b8a778aecec58ab4e14666d6d
+    digest: 9908ea264fa745f9f1c1e7fe3dc1c5a8890dadf56dad3e5b3e119900f2b54b43
     home: https://github.com/rancher/system-upgrade-controller
     kubeVersion: '>= 1.25.0-0'
     name: bad-image-pull
