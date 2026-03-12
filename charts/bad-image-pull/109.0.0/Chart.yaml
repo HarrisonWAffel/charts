@@ -10,7 +10,6 @@ annotations:
 apiVersion: v1
 appVersion: v0.17.0
 description: A test for directly injecting image pull contents into a helm chart
-home: https://github.com/rancher/system-upgrade-controller
 kubeVersion: '>= 1.25.0-0'
 name: bad-image-pull
 version: 109.0.0
