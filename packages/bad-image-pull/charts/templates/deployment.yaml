@@ -52,6 +52,6 @@ spec:
         - operator: Exists
       serviceAccountName: system-upgrade-controller
       containers:
-        - name: {{ .Values.systemUpgradeController.image }}
+        - name: bad
           image: {{ template "system_default_registry" . }}{{ .Values.systemUpgradeController.image.repository }}:{{ .Values.systemUpgradeController.image.tag }}
           imagePullPolicy: Always
