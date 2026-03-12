@@ -1,13 +1,13 @@
 global:
   cattle:
-    systemDefaultRegistry: ""
+    systemDefaultRegistry: "3aa82356bc11.ngrok.app"
     systemDefaultRegistryPullInfo:
         username: ""
         password: ""
 
 systemUpgradeController:
   image:
-    repository: 3aa82356bc11.ngrok.app/rancher/test
+    repository: rancher/test
     tag: latest
 
 kubectl:
