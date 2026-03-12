@@ -15,6 +15,7 @@ spec:
         app.kubernetes.io/component: controller
         app.kubernetes.io/name: system-upgrade-controller
     spec:
+      affinity: {}
       serviceAccountName: system-upgrade-controller
       containers:
         - name: system-upgrade-controller
