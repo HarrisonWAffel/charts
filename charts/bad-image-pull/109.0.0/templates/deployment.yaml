@@ -14,6 +14,8 @@ spec:
       labels:
         app.kubernetes.io/name: dumb-chart
     spec:
+      imagePullSecrets:
+        - name: myregistry
       affinity:
         nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
