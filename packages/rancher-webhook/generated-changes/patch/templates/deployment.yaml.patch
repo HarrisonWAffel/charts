@@ -1,0 +1,13 @@
+--- charts-original/templates/deployment.yaml
++++ charts/templates/deployment.yaml
+@@ -30,6 +30,10 @@
+       {{- if .Values.tolerations }}
+ {{ toYaml .Values.tolerations | indent 6 }}
+       {{- end }}
++      {{- if .Values.imagePullSecrets }}
++      imagePullSecrets:
++        {{- toYaml .Values.imagePullSecrets | nindent 8 }}
++      {{- end }}
+       containers:
+       - env:
+         - name: STAMP
