@@ -5,6 +5,18 @@ kind: Namespace
 metadata:
   name: {{ index .Values "cluster-api-operator" "cluster-api" "core" "namespace" }}
 ---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: capisa
+  namespace: '{{ .Values.namespace }}'
+{{- if .Values.imagePullSecrets }}
+imagePullSecrets:
+{{- range .Values.imagePullSecrets }}
+  - name: {{ . }}
+{{- end }}
+{{- end }}
+---
 apiVersion: turtles-capi.cattle.io/v1alpha1
 kind: CAPIProvider
 metadata:
@@ -37,6 +49,7 @@ spec:
     {{- end }}
 {{- if index .Values "cluster-api-operator" "cluster-api" "core" "imageUrl" }}
   deployment:
+    serviceAccountName: capisa
     containers:
       - name: manager
         imageUrl: {{ index .Values "cluster-api-operator" "cluster-api" "core" "imageUrl" }}
