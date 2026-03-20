@@ -1,0 +1,15 @@
+--- charts-original/templates/rancher-turtles-components.yaml
++++ charts/templates/rancher-turtles-components.yaml
+@@ -3462,6 +3462,12 @@
+     app.kubernetes.io/part-of: rancher-turtles
+   name: rancher-turtles-manager
+   namespace: '{{ .Values.namespace }}'
++{{- if .Values.imagePullSecrets }}
++imagePullSecrets:
++{{- range .Values.imagePullSecrets }}
++- name: {{ . }}
++{{- end }}
++{{- end }}
+ ---
+ apiVersion: rbac.authorization.k8s.io/v1
+ kind: Role

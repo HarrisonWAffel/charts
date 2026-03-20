@@ -1,0 +1,15 @@
+--- charts-original/templates/clusterctl-cm-cleanup-job.yaml
++++ charts/templates/clusterctl-cm-cleanup-job.yaml
+@@ -7,6 +7,12 @@
+   annotations:
+     "helm.sh/hook": "post-delete, pre-upgrade"
+     "helm.sh/hook-weight": "-2"
++{{- if .Values.imagePullSecrets }}
++imagePullSecrets:
++{{- range .Values.imagePullSecrets }}
++  - name: {{ . }}
++{{- end }}
++{{- end }}
+ ---
+ apiVersion: rbac.authorization.k8s.io/v1
+ kind: ClusterRole
