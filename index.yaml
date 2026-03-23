@@ -1541,6 +1541,28 @@ entries:
       catalog.cattle.io/rancher-version: '>= 2.14.0-0 < 2.15.0-0'
       catalog.cattle.io/release-name: fleet
     apiVersion: v2
+    appVersion: 0.15.0-rc.4
+    created: "2026-03-23T16:00:35.218024-04:00"
+    description: Fleet Controller - GitOps at Scale
+    digest: 3b8d7467d47cab97df7ba8b17f880a3da5898f10cd1bb4466f7946ca2438d680
+    icon: https://charts.rancher.io/assets/logos/fleet.svg
+    name: fleet
+    urls:
+    - assets/fleet/fleet-109.0.0+up0.15.0-rc.4.tgz
+    version: 109.0.0+up0.15.0-rc.4
+  - annotations:
+      catalog.cattle.io/auto-install: fleet-crd=match
+      catalog.cattle.io/certified: rancher
+      catalog.cattle.io/experimental: "true"
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/kube-version: '>= 1.33.0-0 < 1.36.0-0'
+      catalog.cattle.io/namespace: cattle-fleet-system
+      catalog.cattle.io/os: linux
+      catalog.cattle.io/permits-os: linux,windows
+      catalog.cattle.io/provides-gvr: clusters.fleet.cattle.io/v1alpha1
+      catalog.cattle.io/rancher-version: '>= 2.14.0-0 < 2.15.0-0'
+      catalog.cattle.io/release-name: fleet
+    apiVersion: v2
     appVersion: 0.15.0-rc.3
     created: "2026-03-12T05:23:23.879248825Z"
     description: Fleet Controller - GitOps at Scale
@@ -3871,6 +3893,25 @@ entries:
       catalog.cattle.io/rancher-version: '>= 2.14.0-0 < 2.15.0-0'
       catalog.cattle.io/release-name: fleet-agent
     apiVersion: v2
+    appVersion: 0.15.0-rc.4
+    created: "2026-03-23T16:00:35.254598-04:00"
+    description: Fleet Agent - GitOps at Scale
+    digest: bbdf8ed5f03a8406526e6c2229448f0c7bd90df2f58cad1638c47b38195279ad
+    icon: https://charts.rancher.io/assets/logos/fleet.svg
+    name: fleet-agent
+    urls:
+    - assets/fleet-agent/fleet-agent-109.0.0+up0.15.0-rc.4.tgz
+    version: 109.0.0+up0.15.0-rc.4
+  - annotations:
+      catalog.cattle.io/certified: rancher
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/kube-version: '>= 1.33.0-0 < 1.36.0-0'
+      catalog.cattle.io/namespace: cattle-fleet-system
+      catalog.cattle.io/os: linux
+      catalog.cattle.io/permits-os: linux,windows
+      catalog.cattle.io/rancher-version: '>= 2.14.0-0 < 2.15.0-0'
+      catalog.cattle.io/release-name: fleet-agent
+    apiVersion: v2
     appVersion: 0.15.0-rc.3
     created: "2026-03-12T05:23:23.917863186Z"
     description: Fleet Agent - GitOps at Scale
@@ -5781,6 +5822,23 @@ entries:
     - assets/fleet-agent/fleet-agent-101.0.0+up0.5.0.tgz
     version: 101.0.0+up0.5.0
   fleet-crd:
+  - annotations:
+      catalog.cattle.io/certified: rancher
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/namespace: cattle-fleet-system
+      catalog.cattle.io/os: linux
+      catalog.cattle.io/permits-os: linux,windows
+      catalog.cattle.io/release-name: fleet-crd
+    apiVersion: v2
+    appVersion: 0.15.0-rc.4
+    created: "2026-03-23T16:00:35.379634-04:00"
+    description: Fleet CustomResourceDefinitions
+    digest: f428f44b0e4b7d7ca06d9d788dd6c3c536b24bfc4f5c09cfe4dbc4156a1dc5d5
+    icon: https://charts.rancher.io/assets/logos/fleet.svg
+    name: fleet-crd
+    urls:
+    - assets/fleet-crd/fleet-crd-109.0.0+up0.15.0-rc.4.tgz
+    version: 109.0.0+up0.15.0-rc.4
   - annotations:
       catalog.cattle.io/certified: rancher
       catalog.cattle.io/hidden: "true"
@@ -41784,6 +41842,35 @@ entries:
     - assets/rancher-supportability-review-crd/rancher-supportability-review-crd-104.0.0+up0.1.2.tgz
     version: 104.0.0+up0.1.2
   rancher-turtles:
+  - annotations:
+      catalog.cattle.io/certified: rancher
+      catalog.cattle.io/display-name: Rancher Turtles
+      catalog.cattle.io/kube-version: '>= 1.33.0-0 < 1.36.0-0'
+      catalog.cattle.io/managed: "true"
+      catalog.cattle.io/namespace: cattle-turtles-system
+      catalog.cattle.io/os: linux
+      catalog.cattle.io/permits-os: linux
+      catalog.cattle.io/rancher-version: '>= 2.14.0-0 < 2.15.0-0'
+      catalog.cattle.io/release-name: rancher-turtles
+      catalog.cattle.io/scope: management
+      catalog.cattle.io/type: cluster-tool
+    apiVersion: v2
+    appVersion: 0.26.0-rc.6
+    created: "2026-03-23T16:01:29.645999-04:00"
+    description: Rancher Turtles - Cluster API integration in Rancher.
+    digest: 229eb73d60c65d2faa97adfaa382bea8bc2ef79412f56f33dba1552043443946
+    home: https://github.com/rancher/turtles/
+    icon: file://assets/logos/rancher-turtles.svg
+    keywords:
+    - rancher
+    - cluster-api
+    - capi
+    - provisioning
+    name: rancher-turtles
+    type: application
+    urls:
+    - assets/rancher-turtles/rancher-turtles-109.0.5+up0.26.0-rc.6.tgz
+    version: 109.0.5+up0.26.0-rc.6
   - annotations:
       catalog.cattle.io/certified: rancher
       catalog.cattle.io/display-name: Rancher Turtles

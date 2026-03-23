@@ -1,8 +1,8 @@
-auto: true
 url: https://github.com/harrisonwaffel/fleet.git
 chartRepoBranch: auth-reg
 subdirectory: charts/fleet
 workingDir: fleet
+version: 109.0.0
 additionalCharts:
   - workingDir: fleet-crd
     upstreamOptions:
