@@ -1,16 +1,16 @@
 auto: true
-url: https://github.com/rancher/fleet.git
-chartRepoBranch: charts/v0.15
+url: https://github.com/harrisonwaffel/fleet.git
+chartRepoBranch: auth-reg
 subdirectory: charts/fleet
 workingDir: fleet
 additionalCharts:
   - workingDir: fleet-crd
     upstreamOptions:
-      url: https://github.com/rancher/fleet.git
-      chartRepoBranch: charts/v0.15
+      url: https://github.com/harrisonwaffel/fleet.git
+      chartRepoBranch: auth-reg
       subdirectory: charts/fleet-crd
   - workingDir: fleet-agent
     upstreamOptions:
-      url: https://github.com/rancher/fleet.git
-      chartRepoBranch: charts/v0.15
+      url: https://github.com/harrisonwaffel/fleet.git
+      chartRepoBranch: auth-reg
       subdirectory: charts/fleet-agent
