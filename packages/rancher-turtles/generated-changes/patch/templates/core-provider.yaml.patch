@@ -1,39 +1,18 @@
 --- charts-original/templates/core-provider.yaml
 +++ charts/templates/core-provider.yaml
-@@ -5,6 +5,18 @@
- metadata:
-   name: {{ index .Values "cluster-api-operator" "cluster-api" "core" "namespace" }}
- ---
-+apiVersion: v1
-+kind: ServiceAccount
-+metadata:
-+  name: capisa
-+  namespace: '{{ .Values.namespace }}'
-+{{- if .Values.imagePullSecrets }}
-+imagePullSecrets:
-+{{- range .Values.imagePullSecrets }}
-+  - name: {{ . }}
-+{{- end }}
-+{{- end }}
-+---
- apiVersion: turtles-capi.cattle.io/v1alpha1
- kind: CAPIProvider
- metadata:
-@@ -35,12 +47,21 @@
+@@ -35,12 +35,19 @@
      {{- else if index .Values "cluster-api-operator" "cluster-api" "core" "fetchConfig" "selector" }}
      selector: {{ index .Values "cluster-api-operator" "cluster-api" "core" "fetchConfig" "selector" | toYaml | nindent 6 }}
      {{- end }}
--{{- if index .Values "cluster-api-operator" "cluster-api" "core" "imageUrl" }}
 +{{- if or (index .Values "cluster-api-operator" "cluster-api" "core" "imageUrl") .Values.imagePullSecrets }}
-   deployment:
-+    serviceAccountName: capisa
 +{{- if .Values.imagePullSecrets }}
 +    imagePullSecrets:
 +{{- range .Values.imagePullSecrets }}
 +      - name: {{ . }}
 +{{- end }}
 +{{- end }}
-+{{- if index .Values "cluster-api-operator" "cluster-api" "core" "imageUrl" }}
+ {{- if index .Values "cluster-api-operator" "cluster-api" "core" "imageUrl" }}
+-  deployment:
      containers:
        - name: manager
          imageUrl: {{ index .Values "cluster-api-operator" "cluster-api" "core" "imageUrl" }}
