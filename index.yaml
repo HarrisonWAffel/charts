@@ -5928,9 +5928,9 @@ entries:
       catalog.cattle.io/release-name: fleet-crd
     apiVersion: v2
     appVersion: 0.15.0-rc.4
-    created: "2026-03-24T11:56:43.307068-04:00"
+    created: "2026-04-06T14:32:24.886787-04:00"
     description: Fleet CustomResourceDefinitions
-    digest: 7d5361dad207f2cfed55b06cc4d7660855aadc1d588f9725fd69090a687f539d
+    digest: 88622ef5536e2df0bc764aa889ae02f34de6afcb5210fe9d9f948d2aa1369762
     icon: https://charts.rancher.io/assets/logos/fleet.svg
     name: fleet-crd
     urls:

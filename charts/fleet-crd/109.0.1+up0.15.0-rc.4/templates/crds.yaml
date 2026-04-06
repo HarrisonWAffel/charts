@@ -6242,10 +6242,12 @@ spec:
                   description: Paused if set to true, will stop any BundleDeployments
                     from being updated.
                   type: boolean
-                privateRepoPullSecret:
+                privateRepoPullSecrets:
                   description: PrivateRepoPullSecret
+                  items:
+                    type: string
                   nullable: true
-                  type: string
+                  type: array
                 privateRepoURL:
                   description: PrivateRepoURL prefixes the image name and overrides
                     a global repo URL from the agents config.
