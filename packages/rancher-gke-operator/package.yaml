@@ -3,6 +3,7 @@ url: https://github.com/rancher/gke-operator.git
 chartRepoBranch: charts/v1.14
 subdirectory: charts/rancher-gke-operator
 workingDir: rancher-gke-operator
+version: 109.0.0
 additionalCharts:
   - workingDir: rancher-gke-operator-crd
     upstreamOptions:
