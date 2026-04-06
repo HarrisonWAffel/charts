@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+  namespace: {{ .Release.Namespace }}
+spec:
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: dumb-chart
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: dumb-chart
+    spec:
+      {{- if .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- range .Values.imagePullSecrets }}
+        - name: {{ . }}
+        {{- end }}
+      {{- end }}
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: "kubernetes.io/os"
+                    operator: NotIn
+                    values:
+                      - windows
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - preference:
+              matchExpressions:
+                - key: "node-role.kubernetes.io/control-plane"
+                  operator: In
+                  values:
+                    - "true"
+            weight: 100
+          - preference:
+              matchExpressions:
+                - key: "node-role.kubernetes.io/master"
+                  operator: In
+                  values:
+                    - "true"
+            weight: 100
+      tolerations:
+        - operator: Exists
+      containers:
+        - name: bad
+          image: {{ template "system_default_registry" . }}{{ .Values.systemUpgradeController.image }}:{{ .Values.systemUpgradeController.tag }}
+          imagePullPolicy: Always

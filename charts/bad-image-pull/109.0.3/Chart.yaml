@@ -11,4 +11,4 @@ appVersion: v0.17.0
 description: A test for directly injecting image pull contents into a helm chart
 kubeVersion: '>= 1.25.0-0'
 name: bad-image-pull
-version: 109.0.0
+version: 109.0.3

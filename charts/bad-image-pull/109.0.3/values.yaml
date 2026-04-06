@@ -1,0 +1,14 @@
+global:
+  cattle:
+    systemDefaultRegistry: ""
+
+imagePullSecrets: []
+
+systemUpgradeController:
+  image: harrisonwaffel/waittest
+  tag: latest
+
+kubectl:
+  image:
+    repository: rancher/kuberlr-kubectl
+    tag: v7.0.1 # For compatibility and versioning, see https://github.com/rancher/kuberlr-kubectl
