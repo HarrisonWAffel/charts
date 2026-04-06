@@ -1598,9 +1598,9 @@ entries:
       catalog.cattle.io/release-name: fleet
     apiVersion: v2
     appVersion: 0.15.0-rc.4
-    created: "2026-03-24T11:56:43.136105-04:00"
+    created: "2026-04-06T15:36:27.520357-04:00"
     description: Fleet Controller - GitOps at Scale
-    digest: b69db3a2eba00eee7d11e51ff3965d0422c442339bd6d10a53521771dcd6ccf6
+    digest: 49ad06c129f7d2795736dcecb5cb799ea11cb73ff7b0ec7090b5036a2246ac85
     icon: https://charts.rancher.io/assets/logos/fleet.svg
     name: fleet
     urls:
@@ -3972,9 +3972,9 @@ entries:
       catalog.cattle.io/release-name: fleet-agent
     apiVersion: v2
     appVersion: 0.15.0-rc.4
-    created: "2026-03-24T11:56:43.173713-04:00"
+    created: "2026-04-06T15:36:27.581237-04:00"
     description: Fleet Agent - GitOps at Scale
-    digest: 3299820dd0e19762b7c59e88142d06707c7c79845e843dfe84de397d952942b6
+    digest: 716cbbc92de2ec95df58b0950a3b07f542777fa54b803cf73f16f064453abab4
     icon: https://charts.rancher.io/assets/logos/fleet.svg
     name: fleet-agent
     urls:

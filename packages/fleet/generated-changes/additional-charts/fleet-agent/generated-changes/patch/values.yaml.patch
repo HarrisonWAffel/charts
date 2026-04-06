@@ -3,9 +3,10 @@
 @@ -1,7 +1,7 @@
  image:
    os: "windows,linux"
-   repository: rancher/fleet-agent
+-  repository: rancher/fleet-agent
 -  tag: dev
-+  tag: v0.15.0
++  repository: harrisonwaffel/fleet-agent
++  tag: test
  
- # The public URL of the Kubernetes API server running the Fleet Controller must be set here
- # Example: https://example.com:6443
+ imagePullSecrets: []
+ 

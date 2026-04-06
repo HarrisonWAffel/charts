@@ -2,15 +2,17 @@
 +++ fleet/values.yaml
 @@ -1,11 +1,11 @@
  image:
-   repository: rancher/fleet
+-  repository: rancher/fleet
 -  tag: dev
-+  tag: v0.15.0
++  repository: harrisonwaffel/fleet
++  tag: test
    imagePullPolicy: IfNotPresent
  
  agentImage:
-   repository: rancher/fleet-agent
+-  repository: rancher/fleet-agent
 -  tag: dev
-+  tag: v0.15.0
++  repository: harrisonwaffel/fleet-agent
++  tag: test
    imagePullPolicy: IfNotPresent
  
  imagePullSecrets: []
