@@ -1,0 +1,18 @@
+--- fleet-agent-original/templates/_helpers.tpl
++++ fleet-agent/templates/_helpers.tpl
+@@ -19,4 +19,13 @@
+ 
+ {{- define "linux-node-selector" -}}
+ kubernetes.io/os: linux
+-{{- end -}}
+\ No newline at end of file
++{{- end -}}
++
++{{- define "imagePullSecrets" -}}
++{{- if .Values.global.cattle.imagePullSecrets }}
++imagePullSecrets:
++  {{- range .Values.global.cattle.imagePullSecrets }}
++  - name: {{ . }}
++  {{- end }}
++{{- end }}
++{{- end -}}

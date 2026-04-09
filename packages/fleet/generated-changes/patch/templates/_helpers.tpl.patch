@@ -1,0 +1,15 @@
+--- fleet-original/templates/_helpers.tpl
++++ fleet/templates/_helpers.tpl
+@@ -60,3 +60,12 @@
+   {{- end -}}
+ {{- end -}}
+ {{- end -}}
++
++{{- define "imagePullSecrets" -}}
++{{- if .Values.global.cattle.imagePullSecrets }}
++imagePullSecrets:
++  {{- range .Values.global.cattle.imagePullSecrets }}
++  - name: {{ . }}
++  {{- end }}
++{{- end }}
++{{- end -}}

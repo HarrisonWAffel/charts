@@ -1,15 +1,10 @@
 --- charts-original/templates/post-upgrade-job.yaml
 +++ charts/templates/post-upgrade-job.yaml
-@@ -6,6 +6,12 @@
+@@ -6,6 +6,7 @@
    annotations:
      "helm.sh/hook": post-upgrade
      "helm.sh/hook-weight": "1"
-+{{- if .Values.imagePullSecrets }}
-+imagePullSecrets:
-+{{- range .Values.imagePullSecrets }}
-+  - name: {{ . }}
-+{{- end }}
-+{{- end }}
++{{ include "imagePullSecrets" . }}
  ---
  apiVersion: rbac.authorization.k8s.io/v1
  kind: ClusterRole

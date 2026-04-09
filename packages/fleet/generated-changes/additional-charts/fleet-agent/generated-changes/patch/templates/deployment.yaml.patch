@@ -1,0 +1,15 @@
+--- fleet-agent-original/templates/deployment.yaml
++++ fleet-agent/templates/deployment.yaml
+@@ -12,12 +12,6 @@
+       labels:
+         app: fleet-agent
+     spec:
+-      {{- with .Values.imagePullSecrets }}
+-      imagePullSecrets:
+-        {{- range . }}
+-        - name: {{ . | quote }}
+-        {{- end }}
+-      {{- end }}
+       containers:
+       - env:
+         - name: NAMESPACE

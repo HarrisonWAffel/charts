@@ -35,11 +35,11 @@ spec:
     {{- else if index .Values "cluster-api-operator" "cluster-api" "core" "fetchConfig" "selector" }}
     selector: {{ index .Values "cluster-api-operator" "cluster-api" "core" "fetchConfig" "selector" | toYaml | nindent 6 }}
     {{- end }}
-{{- if or (index .Values "cluster-api-operator" "cluster-api" "core" "imageUrl") .Values.imagePullSecrets }}
+{{- if or (index .Values "cluster-api-operator" "cluster-api" "core" "imageUrl") .Values.global.cattle.imagePullSecrets }}
   deployment:
-{{- if .Values.imagePullSecrets }}
+{{- if .Values.global.cattle.imagePullSecrets }}
     imagePullSecrets:
-{{- range .Values.imagePullSecrets }}
+{{- range .Values.global.cattle.imagePullSecrets }}
       - name: {{ . }}
 {{- end }}
 {{- end }}

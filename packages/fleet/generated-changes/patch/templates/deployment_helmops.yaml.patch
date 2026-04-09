@@ -1,0 +1,15 @@
+--- fleet-original/templates/deployment_helmops.yaml
++++ fleet/templates/deployment_helmops.yaml
+@@ -36,12 +36,6 @@
+ {{ toYaml $.Values.extraAnnotations.helmops | indent 8 }}
+ {{- end }}
+     spec:
+-      {{- with $.Values.imagePullSecrets }}
+-      imagePullSecrets:
+-        {{- range . }}
+-        - name: {{ . | quote }}
+-        {{- end }}
+-      {{- end }}
+       serviceAccountName: helmops
+       containers:
+         - image: "{{ template "system_default_registry" $ }}{{ $.Values.image.repository }}:{{ $.Values.image.tag }}"

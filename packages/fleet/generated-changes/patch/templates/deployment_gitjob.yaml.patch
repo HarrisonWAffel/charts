@@ -1,0 +1,15 @@
+--- fleet-original/templates/deployment_gitjob.yaml
++++ fleet/templates/deployment_gitjob.yaml
+@@ -36,12 +36,6 @@
+ {{ toYaml $.Values.extraAnnotations.gitjob | indent 8 }}
+ {{- end }}
+     spec:
+-      {{- with $.Values.imagePullSecrets }}
+-      imagePullSecrets:
+-        {{- range . }}
+-        - name: {{ . | quote }}
+-        {{- end }}
+-      {{- end }}
+       serviceAccountName: gitjob
+       containers:
+         - image: "{{ template "system_default_registry" $ }}{{ $.Values.image.repository }}:{{ $.Values.image.tag }}"

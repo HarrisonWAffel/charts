@@ -17,12 +17,7 @@ spec:
       labels:
         control-plane: controller-manager
     spec:
-      {{- if .Values.imagePullSecrets }}
-      imagePullSecrets:
-      {{- range .Values.imagePullSecrets }}
-        - name: {{ . }}
-      {{- end }}  
-      {{- end }}
+      {{ include "imagePullSecrets" . | nindent 6 }}
       containers:
       - args:
         - --leader-elect

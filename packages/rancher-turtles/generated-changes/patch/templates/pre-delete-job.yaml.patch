@@ -1,15 +1,10 @@
 --- charts-original/templates/pre-delete-job.yaml
 +++ charts/templates/pre-delete-job.yaml
-@@ -7,6 +7,12 @@
+@@ -7,6 +7,7 @@
    annotations:
      "helm.sh/hook": pre-delete
      "helm.sh/hook-weight": "-2"
-+{{- if .Values.imagePullSecrets }}
-+imagePullSecrets:
-+{{- range .Values.imagePullSecrets }}
-+  - name: {{ . }}
-+{{- end }}
-+{{- end }}
++{{ include "imagePullSecrets" . }}
  ---
  apiVersion: rbac.authorization.k8s.io/v1
  kind: ClusterRole

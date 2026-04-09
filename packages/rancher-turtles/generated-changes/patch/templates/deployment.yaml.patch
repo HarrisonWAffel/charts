@@ -1,0 +1,16 @@
+--- charts-original/templates/deployment.yaml
++++ charts/templates/deployment.yaml
+@@ -17,12 +17,7 @@
+       labels:
+         control-plane: controller-manager
+     spec:
+-      {{- if .Values.imagePullSecrets }}
+-      imagePullSecrets:
+-      {{- range .Values.imagePullSecrets }}
+-        - name: {{ . }}
+-      {{- end }}  
+-      {{- end }}
++      {{ include "imagePullSecrets" . | nindent 6 }}
+       containers:
+       - args:
+         - --leader-elect

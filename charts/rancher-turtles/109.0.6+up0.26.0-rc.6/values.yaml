@@ -3,6 +3,8 @@ global:
   cattle:
     # systemDefaultRegistry is used to specify the registry images are pulled from.
     systemDefaultRegistry: ""
+    # imagePullSecrets: Secrets for private registries.
+    imagePullSecrets: []
 image:
   # repository is the path to the Turtles GitHub repository.
   repository: rancher/turtles
@@ -14,8 +16,6 @@ image:
 namespace: cattle-turtles-system
 # managerArguments: Extra args for the controller.
 managerArguments: []
-# imagePullSecrets: Secrets for private registries.
-imagePullSecrets: []
 # shellImage: Image for shell tasks.
 shellImage:
   image:
