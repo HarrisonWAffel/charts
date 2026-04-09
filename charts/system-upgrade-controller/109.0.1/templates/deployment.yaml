@@ -55,12 +55,6 @@ spec:
       tolerations:
         - operator: Exists
       serviceAccountName: system-upgrade-controller
-      {{- if .Values.imagePullSecrets }}
-      imagePullSecrets:
-        {{- range .Values.imagePullSecrets }}
-        - name: {{ . }}
-        {{- end }}
-      {{- end }}
       containers:
         - name: system-upgrade-controller
           image: {{ template "system_default_registry" . }}{{ .Values.systemUpgradeController.image.repository }}:{{ .Values.systemUpgradeController.image.tag }}

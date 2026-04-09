@@ -45179,9 +45179,9 @@ entries:
       catalog.cattle.io/release-name: system-upgrade-controller
     apiVersion: v1
     appVersion: v0.17.0
-    created: "2026-03-18T18:23:50.318421-04:00"
+    created: "2026-04-09T16:42:01.632335-04:00"
     description: General purpose controller to make system level updates to nodes.
-    digest: a9c280c64104cd10143797957fbed1221decdef386f67489205be3f57920da28
+    digest: a2579dac5eafc8e8682c925196fda3227f2086d596f83cb16d92608ad352bf43
     home: https://github.com/rancher/system-upgrade-controller
     kubeVersion: '>= 1.25.0-0'
     name: system-upgrade-controller

@@ -7,3 +7,13 @@
 {{- "" -}}
 {{- end -}}
 {{- end -}}
+
+{{- define "imagePullSecrets" -}}
+{{- if .Values.global.cattle.imagePullSecrets }}
+imagePullSecrets:
+  {{- range .Values.global.cattle.imagePullSecrets }}
+  - name: {{ . }}
+  {{- end }}
+{{- end }}
+{{- end -}}
+
