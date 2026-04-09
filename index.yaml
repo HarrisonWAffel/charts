@@ -44533,10 +44533,10 @@ entries:
       catalog.cattle.io/release-name: remotedialer-proxy
     apiVersion: v2
     appVersion: 0.7.0-rc.5
-    created: "2026-03-20T15:54:02.161709-04:00"
+    created: "2026-04-09T16:46:00.11137-04:00"
     description: creates a bridge between k8s api-server and imperative api when Rancher
       is outside of the cluster
-    digest: 4f87af75f71657fae2fbdfa6774c76d00e8c3bd811d432201253afdd6c2df03a
+    digest: e194db2169d3e651866c7df95f30b0db58c747ed8c029a3c06f48ff9dd9e15d1
     name: remotedialer-proxy
     type: application
     urls:

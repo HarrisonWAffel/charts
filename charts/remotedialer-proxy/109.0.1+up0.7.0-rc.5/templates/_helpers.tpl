@@ -75,3 +75,16 @@ Role Binding to use
 {{- define "remotedialer-proxy.rolebinding" -}}
 {{- include "api-extension.name" . }}
 {{- end }}
+
+{{/*
+Image pull secrets
+*/}}
+{{- define "imagePullSecrets" -}}
+{{- if .Values.global.cattle.imagePullSecrets }}
+imagePullSecrets:
+  {{- range .Values.global.cattle.imagePullSecrets }}
+  - name: {{ . }}
+  {{- end }}
+{{- end }}
+{{- end -}}
+

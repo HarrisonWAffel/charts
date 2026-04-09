@@ -1,16 +1,13 @@
 --- charts-original/templates/deployment.yaml
 +++ charts/templates/deployment.yaml
-@@ -20,9 +20,11 @@
+@@ -20,10 +20,6 @@
          {{- toYaml . | nindent 8 }}
          {{- end }}
      spec:
 -      {{- with .Values.imagePullSecrets }}
-+      {{- if .Values.imagePullSecrets }}
-       imagePullSecrets:
+-      imagePullSecrets:
 -        {{- toYaml . | nindent 8 }}
-+        {{- range .Values.imagePullSecrets }}
-+        - name: {{ . }}
-+        {{- end }}
-       {{- end }}
+-      {{- end }}
        serviceAccountName: {{ include "remotedialer-proxy.serviceAccountName" . }}
        containers:
+         - name: {{ include "remotedialer-proxy.name" . }}

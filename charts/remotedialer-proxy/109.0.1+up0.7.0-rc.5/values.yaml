@@ -10,7 +10,6 @@ image:
   # Overrides the image tag whose default is the chart appVersion.
   tag: v0.7.0-rc.5
 
-imagePullSecrets: []
 nameOverride: ""
 namespaceOverride: ""
 roleOverride: ""
@@ -34,3 +33,4 @@ service:
 global:
   cattle:
     systemDefaultRegistry: ""
+    imagePullSecrets: []
