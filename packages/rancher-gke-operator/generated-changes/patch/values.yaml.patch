@@ -1,9 +1,10 @@
 --- rancher-gke-operator-original/values.yaml
 +++ rancher-gke-operator/values.yaml
-@@ -21,3 +21,5 @@
+@@ -1,6 +1,7 @@
+ global:
+   cattle:
+     systemDefaultRegistry: ""
++    imagePullSecrets: []
  
- ## PriorityClassName assigned to deployment.
- priorityClassName: ""
-+
-+imagePullSecrets: []
-\ No newline at end of file
+ gkeOperator:
+   image:
