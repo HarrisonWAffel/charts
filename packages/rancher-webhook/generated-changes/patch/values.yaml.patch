@@ -1,11 +1,10 @@
 --- charts-original/values.yaml
 +++ charts/values.yaml
-@@ -11,6 +11,8 @@
- mcm:
-   enabled: true
+@@ -6,6 +6,7 @@
+ global:
+   cattle:
+     systemDefaultRegistry: ""
++    imagePullSecrets: []
+   hostNetwork: false
  
-+imagePullSecrets: []
-+
- # tolerations for the webhook deployment. See https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/ for more info
- tolerations: []
- nodeSelector: {}
+ mcm:
