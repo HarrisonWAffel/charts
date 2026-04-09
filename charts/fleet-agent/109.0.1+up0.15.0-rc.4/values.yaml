@@ -3,8 +3,6 @@ image:
   repository: harrisonwaffel/fleet-agent
   tag: test
 
-imagePullSecrets: []
-
 # The public URL of the Kubernetes API server running the Fleet Controller must be set here
 # Example: https://example.com:6443
 apiServerURL: ""
@@ -74,6 +72,7 @@ kubectl:
 global:
   cattle:
     systemDefaultRegistry: ""
+    imagePullSecrets: []
 
 debug: false
 debugLevel: 0
