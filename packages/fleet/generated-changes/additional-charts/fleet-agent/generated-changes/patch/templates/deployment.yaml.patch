@@ -13,3 +13,11 @@
        containers:
        - env:
          - name: NAMESPACE
+@@ -81,6 +75,7 @@
+         - name: kube
+           emptyDir: {}
+       serviceAccountName: fleet-agent
++      {{- include "imagePullSecrets" . | nindent 6 }}
+       {{- if .Values.fleetAgent.hostNetwork }}
+       hostNetwork: true
+       {{- end }}

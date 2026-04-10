@@ -37,6 +37,7 @@ spec:
 {{- end }}
     spec:
       serviceAccountName: gitjob
+      {{- include "imagePullSecrets" $ | nindent 6 }}
       containers:
         - image: "{{ template "system_default_registry" $ }}{{ $.Values.image.repository }}:{{ $.Values.image.tag }}"
           name: gitjob

@@ -1598,9 +1598,9 @@ entries:
       catalog.cattle.io/release-name: fleet
     apiVersion: v2
     appVersion: 0.15.0-rc.4
-    created: "2026-04-09T17:19:25.477977-04:00"
+    created: "2026-04-10T15:55:48.893433-04:00"
     description: Fleet Controller - GitOps at Scale
-    digest: d06a79f8607a9b132bf99e6476c092ab72ff54b884bc5c643a850997875996ee
+    digest: 282553d4cab0a55bb05fee0f2348db5a2d7a1258895c8ab4c71ec55798bc5a33
     icon: https://charts.rancher.io/assets/logos/fleet.svg
     name: fleet
     urls:
@@ -3972,9 +3972,9 @@ entries:
       catalog.cattle.io/release-name: fleet-agent
     apiVersion: v2
     appVersion: 0.15.0-rc.4
-    created: "2026-04-09T17:19:25.514614-04:00"
+    created: "2026-04-10T15:55:48.929467-04:00"
     description: Fleet Agent - GitOps at Scale
-    digest: b359d3f28aa05990c80e93a3ee47b8dfe0f19f46a87c2744f0d346c807b869f4
+    digest: 3ae0e926b822d89092f012e42abc97d73111a79eb2d922d55ede80fc7af13102
     icon: https://charts.rancher.io/assets/logos/fleet.svg
     name: fleet-agent
     urls:
@@ -42688,9 +42688,9 @@ entries:
       catalog.cattle.io/release-name: rancher-webhook
     apiVersion: v2
     appVersion: 0.10.0-rc.11
-    created: "2026-04-10T13:45:33.555902-04:00"
+    created: "2026-04-10T15:51:46.059275-04:00"
     description: ValidatingAdmissionWebhook for Rancher types
-    digest: 33c83215b8df709569cfafa28a01c25f6a08476f4d078b3dae5fb6820fd9006b
+    digest: 17bf1ad06850e5b4b07c737c36822791a7847f65873eed46c0e4d06627b00bb1
     name: rancher-webhook
     urls:
     - assets/rancher-webhook/rancher-webhook-109.0.1+up0.10.0-rc.11.tgz
@@ -44573,10 +44573,10 @@ entries:
       catalog.cattle.io/release-name: remotedialer-proxy
     apiVersion: v2
     appVersion: 0.7.0-rc.5
-    created: "2026-04-09T16:46:00.11137-04:00"
+    created: "2026-04-10T15:50:46.970338-04:00"
     description: creates a bridge between k8s api-server and imperative api when Rancher
       is outside of the cluster
-    digest: e194db2169d3e651866c7df95f30b0db58c747ed8c029a3c06f48ff9dd9e15d1
+    digest: 5b31dbbe2176dc3b3750ebf99679a12e2908b8ab6fa71508e1d88fe55094b4ec
     name: remotedialer-proxy
     type: application
     urls:
@@ -45219,9 +45219,9 @@ entries:
       catalog.cattle.io/release-name: system-upgrade-controller
     apiVersion: v1
     appVersion: v0.17.0
-    created: "2026-04-09T16:42:01.632335-04:00"
+    created: "2026-04-10T15:56:57.703105-04:00"
     description: General purpose controller to make system level updates to nodes.
-    digest: a2579dac5eafc8e8682c925196fda3227f2086d596f83cb16d92608ad352bf43
+    digest: 26ab1b53b6697d57ba8a42af26c49d4455cad4b07232f2a535eae3e426c4d5d9
     home: https://github.com/rancher/system-upgrade-controller
     kubeVersion: '>= 1.25.0-0'
     name: system-upgrade-controller

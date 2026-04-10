@@ -21,6 +21,7 @@ spec:
         {{- end }}
     spec:
       serviceAccountName: {{ include "remotedialer-proxy.serviceAccountName" . }}
+      {{- include "imagePullSecrets" . | nindent 6 }}
       containers:
         - name: {{ include "remotedialer-proxy.name" . }}
           image: {{ template "system_default_registry" $ }}{{ $.Values.image.repository }}:{{default .Chart.AppVersion .Values.image.tag }}

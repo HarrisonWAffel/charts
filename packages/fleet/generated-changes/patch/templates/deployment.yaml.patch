@@ -13,3 +13,11 @@
        containers:
        - env:
          - name: NAMESPACE
+@@ -262,6 +256,7 @@
+           emptyDir: {}
+ 
+       serviceAccountName: fleet-controller
++      {{- include "imagePullSecrets" $ | nindent 6 }}
+       nodeSelector: {{ include "linux-node-selector" $shard.id | nindent 8 }}
+ {{- if $.Values.nodeSelector }}
+ {{ toYaml $.Values.nodeSelector | indent 8 }}
