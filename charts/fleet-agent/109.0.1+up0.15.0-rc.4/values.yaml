@@ -1,7 +1,8 @@
 image:
   os: "windows,linux"
-  repository: harrisonwaffel/fleet-agent
-  tag: test
+  repository: rancher/fleet-agent
+  tag: dev
+
 
 # The public URL of the Kubernetes API server running the Fleet Controller must be set here
 # Example: https://example.com:6443

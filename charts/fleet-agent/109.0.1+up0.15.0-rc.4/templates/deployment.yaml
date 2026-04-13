@@ -12,6 +12,12 @@ spec:
       labels:
         app: fleet-agent
     spec:
+      {{- with .Values.global.cattle.imagePullSecrets }}
+      imagePullSecrets:
+        {{- range . }}
+        - name: {{ . | quote }}
+        {{- end }}
+      {{- end }}
       containers:
       - env:
         - name: NAMESPACE
@@ -75,7 +81,6 @@ spec:
         - name: kube
           emptyDir: {}
       serviceAccountName: fleet-agent
-      {{- include "imagePullSecrets" . | nindent 6 }}
       {{- if .Values.fleetAgent.hostNetwork }}
       hostNetwork: true
       {{- end }}
