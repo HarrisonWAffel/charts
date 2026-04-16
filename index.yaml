@@ -28593,9 +28593,9 @@ entries:
       catalog.cattle.io/scope: management
     apiVersion: v2
     appVersion: 1.14.1-rc.1
-    created: "2026-04-09T16:53:13.924201-04:00"
+    created: "2026-04-16T17:54:42.56697-04:00"
     description: A Helm chart for provisioning GKE clusters
-    digest: 002b3ae0af66de984559087262a91687b399206e59b122f115e1260b34f5c47b
+    digest: 54c5bb87686cdc71a392dd145c133fe7601c94f18d614c3b55c74b0bbea13a3e
     home: https://github.com/rancher/gke-operator
     name: rancher-gke-operator
     sources:

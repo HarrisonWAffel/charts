@@ -1,0 +1,12 @@
+--- rancher-gke-operator-original/templates/deployment.yaml
++++ rancher-gke-operator/templates/deployment.yaml
+@@ -22,6 +22,9 @@
+ {{ toYaml .Values.tolerations | indent 8 }}
+ {{- end }}
+       serviceAccountName: gke-operator
++      {{- with (include "imagePullSecrets" . | trim) }}
++      {{ . }}
++      {{- end }}
+       {{- if .Values.priorityClassName }}
+       priorityClassName: "{{.Values.priorityClassName}}"
+       {{- end }}
