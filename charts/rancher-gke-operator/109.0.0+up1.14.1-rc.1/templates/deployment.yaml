@@ -22,8 +22,11 @@ spec:
 {{ toYaml .Values.tolerations | indent 8 }}
 {{- end }}
       serviceAccountName: gke-operator
-      {{- with (include "imagePullSecrets" . | trim) }}
-      {{ . }}
+      {{- if .Values.global.cattle.imagePullSecrets }}
+      imagePullSecrets:
+        {{- range .Values.global.cattle.imagePullSecrets }}
+        - name: {{ . }}
+        {{- end }}
       {{- end }}
       {{- if .Values.priorityClassName }}
       priorityClassName: "{{.Values.priorityClassName}}"
