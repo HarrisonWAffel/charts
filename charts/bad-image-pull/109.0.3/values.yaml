@@ -1,8 +1,7 @@
 global:
   cattle:
     systemDefaultRegistry: ""
-
-imagePullSecrets: []
+    imagePullSecrets: []
 
 systemUpgradeController:
   image: harrisonwaffel/waittest
