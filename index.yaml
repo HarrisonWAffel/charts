@@ -43975,9 +43975,9 @@ entries:
       catalog.cattle.io/type: cluster-tool
     apiVersion: v2
     appVersion: 0.26.0
-    created: "2026-03-19T14:02:30.889014821Z"
+    created: "2026-04-27T13:01:41.702525-04:00"
     description: Rancher Turtles - Cluster API integration in Rancher.
-    digest: dda4ca74c0ed78550251f5cdc7e7e4d9bbdd3999b44ffcbe852a3ea379b0cab5
+    digest: 2c93e9a2a9f88e4ba4a04805d1446f6835cd9973cc7ba53f64485f8dccf59a98
     home: https://github.com/rancher/turtles/
     icon: file://assets/logos/rancher-turtles.svg
     keywords:

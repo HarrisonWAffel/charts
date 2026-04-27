@@ -1,0 +1,255 @@
+--- charts-original/templates/post-delete-job.yaml
++++ charts/templates/post-delete-job.yaml
+@@ -17,26 +17,26 @@
+     "helm.sh/hook": post-delete
+     "helm.sh/hook-weight": "1"
+ rules:
+-- apiGroups:
+-  - admissionregistration.k8s.io
+-  resources:
+-  - validatingwebhookconfigurations
+-  - mutatingwebhookconfigurations
+-  verbs:
+-  - delete
+-- apiGroups:
+-  - apps
+-  resources:
+-  - deployments
+-  verbs:
+-  - delete
+-- apiGroups:
+-  - ""
+-  resources:
+-  - configmaps
+-  verbs:
+-  - list
+-  - delete
++  - apiGroups:
++      - admissionregistration.k8s.io
++    resources:
++      - validatingwebhookconfigurations
++      - mutatingwebhookconfigurations
++    verbs:
++      - delete
++  - apiGroups:
++      - apps
++    resources:
++      - deployments
++    verbs:
++      - delete
++  - apiGroups:
++      - ""
++    resources:
++      - configmaps
++    verbs:
++      - list
++      - delete
+ ---
+ apiVersion: rbac.authorization.k8s.io/v1
+ kind: ClusterRoleBinding
+@@ -66,25 +66,31 @@
+   ttlSecondsAfterFinished: 300
+   template:
+     spec:
++      {{- if .Values.imagePullSecrets }}
++      imagePullSecrets:
++      {{- range .Values.imagePullSecrets }}
++        - name: {{ . }}
++      {{- end }}
++      {{- end }}
+       serviceAccountName: post-delete-job
+       containers:
+-      - name: cluster-api-operator-mutatingwebhook-cleanup
+-        image: '{{ template "system_default_registry" . }}{{ .Values.shellImage.image.repository }}:{{ .Values.shellImage.image.tag }}'
+-        command: ["kubectl"]
+-        args:
+-        - delete
+-        - mutatingwebhookconfigurations.admissionregistration.k8s.io
+-        - capi-mutating-webhook-configuration
+-        - --ignore-not-found=true
+-        securityContext:
+-          seccompProfile:
+-            type: RuntimeDefault
+-          allowPrivilegeEscalation: false
+-          capabilities:
+-            drop:
+-            - ALL
+-          runAsNonRoot: true
+-          runAsUser: 1000
++        - name: cluster-api-operator-mutatingwebhook-cleanup
++          image: '{{ template "system_default_registry" . }}{{ .Values.shellImage.image.repository }}:{{ .Values.shellImage.image.tag }}'
++          command: ["kubectl"]
++          args:
++            - delete
++            - mutatingwebhookconfigurations.admissionregistration.k8s.io
++            - capi-mutating-webhook-configuration
++            - --ignore-not-found=true
++          securityContext:
++            seccompProfile:
++              type: RuntimeDefault
++            allowPrivilegeEscalation: false
++            capabilities:
++              drop:
++                - ALL
++            runAsNonRoot: true
++            runAsUser: 1000
+       restartPolicy: Never
+ ---
+ apiVersion: batch/v1
+@@ -99,25 +105,31 @@
+   ttlSecondsAfterFinished: 300
+   template:
+     spec:
++      {{- if .Values.imagePullSecrets }}
++      imagePullSecrets:
++      {{- range .Values.imagePullSecrets }}
++        - name: {{ . }}
++      {{- end }}
++      {{- end }}
+       serviceAccountName: post-delete-job
+       containers:
+-      - name: cluster-api-operator-validatingwebhook-cleanup
+-        image: '{{ template "system_default_registry" . }}{{ .Values.shellImage.image.repository }}:{{ .Values.shellImage.image.tag }}'
+-        command: ["kubectl"]
+-        args:
+-        - delete
+-        - validatingwebhookconfigurations.admissionregistration.k8s.io
+-        - capi-validating-webhook-configuration
+-        - --ignore-not-found=true
+-        securityContext:
+-          seccompProfile:
+-            type: RuntimeDefault
+-          allowPrivilegeEscalation: false
+-          capabilities:
+-            drop:
+-            - ALL
+-          runAsNonRoot: true
+-          runAsUser: 1000
++        - name: cluster-api-operator-validatingwebhook-cleanup
++          image: '{{ template "system_default_registry" . }}{{ .Values.shellImage.image.repository }}:{{ .Values.shellImage.image.tag }}'
++          command: ["kubectl"]
++          args:
++            - delete
++            - validatingwebhookconfigurations.admissionregistration.k8s.io
++            - capi-validating-webhook-configuration
++            - --ignore-not-found=true
++          securityContext:
++            seccompProfile:
++              type: RuntimeDefault
++            allowPrivilegeEscalation: false
++            capabilities:
++              drop:
++                - ALL
++            runAsNonRoot: true
++            runAsUser: 1000
+       restartPolicy: Never
+ ---
+ apiVersion: batch/v1
+@@ -132,27 +144,33 @@
+   ttlSecondsAfterFinished: 300
+   template:
+     spec:
++      {{- if .Values.imagePullSecrets }}
++      imagePullSecrets:
++      {{- range .Values.imagePullSecrets }}
++        - name: {{ . }}
++      {{- end }}
++      {{- end }}
+       serviceAccountName: post-delete-job
+       restartPolicy: Never
+       containers:
+-      - name: delete-capi-controller-manager
+-        image: '{{ template "system_default_registry" . }}{{ .Values.shellImage.image.repository }}:{{ .Values.shellImage.image.tag }}'
+-        command: ["kubectl"]
+-        args:
+-        - delete
+-        - deployments.apps/capi-controller-manager
+-        - -n
+-        - {{ index .Values "cluster-api-operator" "cluster-api" "core" "namespace" }}
+-        - --ignore-not-found=true
+-        securityContext:
+-          seccompProfile:
+-            type: RuntimeDefault
+-          allowPrivilegeEscalation: false
+-          capabilities:
+-            drop:
+-            - ALL
+-          runAsNonRoot: true
+-          runAsUser: 1000
++        - name: delete-capi-controller-manager
++          image: '{{ template "system_default_registry" . }}{{ .Values.shellImage.image.repository }}:{{ .Values.shellImage.image.tag }}'
++          command: ["kubectl"]
++          args:
++            - delete
++            - deployments.apps/capi-controller-manager
++            - -n
++            - {{ index .Values "cluster-api-operator" "cluster-api" "core" "namespace" }}
++            - --ignore-not-found=true
++          securityContext:
++            seccompProfile:
++              type: RuntimeDefault
++            allowPrivilegeEscalation: false
++            capabilities:
++              drop:
++                - ALL
++            runAsNonRoot: true
++            runAsUser: 1000
+ ---
+ apiVersion: batch/v1
+ kind: Job
+@@ -166,27 +184,33 @@
+   ttlSecondsAfterFinished: 300
+   template:
+     spec:
++      {{- if .Values.imagePullSecrets }}
++      imagePullSecrets:
++      {{- range .Values.imagePullSecrets }}
++        - name: {{ . }}
++      {{- end }}
++      {{- end }}
+       serviceAccountName: post-delete-job
+       restartPolicy: Never
+       containers:
+-      - name: delete-capi-configmaps
+-        image: '{{ template "system_default_registry" . }}{{ .Values.shellImage.image.repository }}:{{ .Values.shellImage.image.tag }}'
+-        command: ["kubectl"]
+-        args:
+-        - delete
+-        - configmaps
+-        - -n
+-        - {{ index .Values "cluster-api-operator" "cluster-api" "core" "namespace" }}
+-        - -l
+-        - managed-by.turtles.cattle.io=true
+-        - --ignore-not-found=true
+-        securityContext:
+-          seccompProfile:
+-            type: RuntimeDefault
+-          allowPrivilegeEscalation: false
+-          capabilities:
+-            drop:
+-            - ALL
+-          runAsNonRoot: true
+-          runAsUser: 1000
+-{{- end }}
++        - name: delete-capi-configmaps
++          image: '{{ template "system_default_registry" . }}{{ .Values.shellImage.image.repository }}:{{ .Values.shellImage.image.tag }}'
++          command: ["kubectl"]
++          args:
++            - delete
++            - configmaps
++            - -n
++            - {{ index .Values "cluster-api-operator" "cluster-api" "core" "namespace" }}
++            - -l
++            - managed-by.turtles.cattle.io=true
++            - --ignore-not-found=true
++          securityContext:
++            seccompProfile:
++              type: RuntimeDefault
++            allowPrivilegeEscalation: false
++            capabilities:
++              drop:
++                - ALL
++            runAsNonRoot: true
++            runAsUser: 1000
++{{- end }}
+\ No newline at end of file
