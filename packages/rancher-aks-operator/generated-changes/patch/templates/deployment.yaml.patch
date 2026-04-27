@@ -1,0 +1,10 @@
+--- rancher-aks-operator-original/templates/deployment.yaml
++++ rancher-aks-operator/templates/deployment.yaml
+@@ -22,6 +22,7 @@
+ {{ toYaml .Values.tolerations | indent 8 }}
+ {{- end }}
+       serviceAccountName: aks-operator
++      {{- include "rancher-aks-operator.imagePullSecrets" . | nindent 6 }}
+       {{- if .Values.priorityClassName }}
+       priorityClassName: "{{.Values.priorityClassName}}"
+       {{- end }}
