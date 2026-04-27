@@ -27105,6 +27105,30 @@ entries:
       catalog.cattle.io/release-name: rancher-eks-operator
       catalog.cattle.io/scope: management
     apiVersion: v2
+    appVersion: 1.14.1
+    created: "2026-04-27T17:24:57.531813-04:00"
+    description: A Helm chart for provisioning EKS clusters
+    digest: 864995db9f7bfd4797c05e55a70eadbe3c66179d74da0198c1706a9984b08059
+    home: https://github.com/rancher/eks-operator
+    name: rancher-eks-operator
+    sources:
+    - https://github.com/rancher/eks-operator
+    urls:
+    - assets/rancher-eks-operator/rancher-eks-operator-109.0.0+up1.14.1.tgz
+    version: 109.0.0+up1.14.1
+  - annotations:
+      catalog.cattle.io/auto-install: rancher-eks-operator-crd=match
+      catalog.cattle.io/certified: rancher
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/kube-version: '>= 1.33.0-0 < 1.36.0-0'
+      catalog.cattle.io/namespace: cattle-system
+      catalog.cattle.io/os: linux
+      catalog.cattle.io/permits-os: linux,windows
+      catalog.cattle.io/provides-gvr: eksclusterconfigs.eks.cattle.io/v1
+      catalog.cattle.io/rancher-version: '>= 2.14.0-0 < 2.15.0-0'
+      catalog.cattle.io/release-name: rancher-eks-operator
+      catalog.cattle.io/scope: management
+    apiVersion: v2
     appVersion: 1.14.0
     created: "2026-03-18T05:50:16.278637623Z"
     description: A Helm chart for provisioning EKS clusters
@@ -28653,6 +28677,22 @@ entries:
     - assets/rancher-eks-operator/rancher-eks-operator-101.0.0+up1.1.5.tgz
     version: 101.0.0+up1.1.5
   rancher-eks-operator-crd:
+  - annotations:
+      catalog.cattle.io/certified: rancher
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/namespace: cattle-system
+      catalog.cattle.io/os: linux
+      catalog.cattle.io/permits-os: linux,windows
+      catalog.cattle.io/release-name: rancher-eks-operator-crd
+    apiVersion: v2
+    appVersion: 1.14.1
+    created: "2026-04-27T17:24:57.54948-04:00"
+    description: EKS Operator CustomResourceDefinitions
+    digest: 4bdd956ef287bc3962e795a250f3c1e9f37ce705c15751c79627072020d5d0a6
+    name: rancher-eks-operator-crd
+    urls:
+    - assets/rancher-eks-operator-crd/rancher-eks-operator-crd-109.0.0+up1.14.1.tgz
+    version: 109.0.0+up1.14.1
   - annotations:
       catalog.cattle.io/certified: rancher
       catalog.cattle.io/hidden: "true"

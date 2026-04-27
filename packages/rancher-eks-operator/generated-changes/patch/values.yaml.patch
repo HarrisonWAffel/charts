@@ -1,0 +1,12 @@
+--- rancher-eks-operator-original/values.yaml
++++ rancher-eks-operator/values.yaml
+@@ -1,6 +1,9 @@
+ global:
+   cattle:
+     systemDefaultRegistry: ""
++    # imagePullSecrets:
++    #   - name: secret1
++    imagePullSecrets: []
+ 
+ eksOperator:
+   image:
