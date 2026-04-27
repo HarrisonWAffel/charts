@@ -44145,9 +44145,9 @@ entries:
       catalog.cattle.io/release-name: rancher-webhook
     apiVersion: v2
     appVersion: 0.10.0
-    created: "2026-03-18T21:47:07.521512397Z"
+    created: "2026-04-27T12:59:32.341853-04:00"
     description: ValidatingAdmissionWebhook for Rancher types
-    digest: aec08861c8dd0f604efba443c5697c1fab9d019c477e76da15fc2e8c3b2dfb63
+    digest: e8719eaf2f9d310797d1743cf9090661b396cfd21f833dd26e96265e798c8ba2
     name: rancher-webhook
     urls:
     - assets/rancher-webhook/rancher-webhook-109.0.0+up0.10.0.tgz
