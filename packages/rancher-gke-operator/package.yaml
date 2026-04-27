@@ -1,4 +1,5 @@
-auto: true
+auto: off
+version: 109.0.0
 url: https://github.com/rancher/gke-operator.git
 chartRepoBranch: charts/v1.14
 subdirectory: charts/rancher-gke-operator
