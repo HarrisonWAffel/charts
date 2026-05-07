@@ -1,0 +1,12 @@
+global:
+  cattle:
+    systemDefaultRegistry: ""
+    imagePullSecrets: []
+
+nginx:
+  image:
+    repository: nginx
+    tag: latest
+  replicaCount: 1
+  service:
+    port: 80
