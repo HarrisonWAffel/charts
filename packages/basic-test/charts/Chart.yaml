@@ -12,4 +12,4 @@ description: testing
 home: https://github.com/rancher/system-upgrade-controller
 kubeVersion: '>= 1.25.0-0'
 name: basic-test
-version: 109.0.1
+version: 110.0.1

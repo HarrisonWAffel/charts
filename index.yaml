@@ -3,7 +3,6 @@ entries:
   basic-test:
   - annotations:
       catalog.cattle.io/certified: rancher
-      catalog.cattle.io/hidden: "true"
       catalog.cattle.io/kube-version: '>= 1.25.0-0 < 1.36.0-0'
       catalog.cattle.io/managed: "true"
       catalog.cattle.io/namespace: cattle-system
@@ -12,9 +11,9 @@ entries:
       catalog.cattle.io/release-name: basic test
     apiVersion: v1
     appVersion: v0.19.1
-    created: "2026-05-11T15:02:01.115704-04:00"
+    created: "2026-05-11T17:16:31.731152-04:00"
     description: testing
-    digest: 3befc98dbe2235198958fc3120e8b02b6aa09b69d10697b43128e638c4d4b2ca
+    digest: 09fb46d1393f4fdb1eda9c9c26f7e2272c955d66e6d2947caee25964bdb871d1
     home: https://github.com/rancher/system-upgrade-controller
     kubeVersion: '>= 1.25.0-0'
     name: basic-test
