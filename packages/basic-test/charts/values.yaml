@@ -3,9 +3,9 @@ global:
     systemDefaultRegistry: ""
     imagePullSecrets: []
 
-nginx:
+busybox:
   image:
-    repository: nginx
+    repository: chainguard/busybox
     tag: latest
   replicaCount: 1
   service:
