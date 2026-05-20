@@ -10,9 +10,9 @@ entries:
       catalog.cattle.io/release-name: basic-test
     apiVersion: v1
     appVersion: v0.19.1
-    created: "2026-05-20T14:00:11.516146-04:00"
+    created: "2026-05-20T14:07:02.528032-04:00"
     description: testing
-    digest: c19fea719ff495f2ce25e5fbeffaba4c0a6c6fac87e82c18a6a2dde3d751a0b5
+    digest: cb389d85cc79abd9c89ee8dbe6ee2d739c5c1913020f66e6d43fce6bd4b92869
     home: https://github.com/rancher/system-upgrade-controller
     kubeVersion: '>= 1.25.0-0'
     name: basic-test
