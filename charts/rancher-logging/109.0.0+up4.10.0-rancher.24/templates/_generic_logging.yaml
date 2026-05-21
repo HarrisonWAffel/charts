@@ -12,6 +12,10 @@ spec:
     logLevel: {{ . }}
     {{- end }}
     image:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 7 }}
+      {{- end }}
       repository: {{ template "system_default_registry" . }}{{ .Values.images.fluentd.repository }}
       tag: {{ .Values.images.fluentd.tag }}
     configReloaderImage:
@@ -56,10 +60,6 @@ spec:
     {{- end }}
     {{- with .Values.fluentd.metrics }}
     metrics: {{- toYaml . | nindent 6 }}
-    {{- end }}
-    {{- with .Values.imagePullSecrets }}
-    imagePullSecrets:
-      {{- toYaml . | nindent 6 }}
     {{- end }}
 {{- end -}}
 
