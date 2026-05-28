@@ -22,7 +22,7 @@ spec:
   {{- if (not .Values.logging.fluentdDisabled) }}
   {{- $chartFluentd := dict }}
   {{- if .Values.imagePullSecrets }}
-    {{- $_ := set $chartFluentd "imagePullSecrets" .Values.imagePullSecrets }}
+    {{- $_ := set $chartFluentd "serviceAccount" (dict "imagePullSecrets" .Values.imagePullSecrets) }}
   {{- end }}
   {{- $userFluentd := .Values.logging.fluentd | default dict }}
   {{- $mergedFluentd := merge $userFluentd $chartFluentd }}
