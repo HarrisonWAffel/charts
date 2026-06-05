@@ -1,16 +1,16 @@
-auto: true
-url: https://github.com/rancher/fleet.git
-chartRepoBranch: charts/v0.16
+url: https://github.com/harrisonwaffel/fleet.git
+chartRepoBranch: agent-cluster-level-auth
 subdirectory: charts/fleet
 workingDir: fleet
+version: 109.0.1
 additionalCharts:
   - workingDir: fleet-crd
     upstreamOptions:
-      url: https://github.com/rancher/fleet.git
-      chartRepoBranch: charts/v0.16
+      url: https://github.com/harrisonwaffel/fleet.git
+      chartRepoBranch: agent-cluster-level-auth
       subdirectory: charts/fleet-crd
   - workingDir: fleet-agent
     upstreamOptions:
-      url: https://github.com/rancher/fleet.git
-      chartRepoBranch: charts/v0.16
+      url: https://github.com/harrisonwaffel/fleet.git
+      chartRepoBranch: agent-cluster-level-auth
       subdirectory: charts/fleet-agent
