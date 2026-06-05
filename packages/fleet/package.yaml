@@ -2,7 +2,7 @@ url: https://github.com/harrisonwaffel/fleet.git
 chartRepoBranch: agent-cluster-level-auth
 subdirectory: charts/fleet
 workingDir: fleet
-version: 109.0.1
+version: 109.0.2
 additionalCharts:
   - workingDir: fleet-crd
     upstreamOptions:
