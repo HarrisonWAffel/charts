@@ -1,0 +1,13 @@
+global:
+  cattle:
+    systemDefaultRegistry: ""
+    imagePullSecrets: []
+
+busybox:
+  image:
+    repository: chainguard/busybox
+    tag: latest
+  replicaCount: 1
+  service:
+    port: 80
+

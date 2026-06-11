@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-busybox
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app.kubernetes.io/name: busybox
+    app.kubernetes.io/instance: {{ .Release.Name }}
+spec:
+  replicas: {{ .Values.busybox.replicaCount }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: busybox
+      app.kubernetes.io/instance: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: busybox
+        app.kubernetes.io/instance: {{ .Release.Name }}
+    spec:
+      {{- include "system-upgrade-controller.imagePullSecrets" . | nindent 6 }}
+      containers:
+        - name: busybox
+          image: {{ template "system_default_registry" . }}{{ .Values.busybox.image.repository }}:{{ .Values.busybox.image.tag }}
+          imagePullPolicy: IfNotPresent
+          command: ["/bin/sh", "-c", "tail -f /dev/null"]
+          ports:
+            - name: http
+              containerPort: {{ .Values.busybox.service.port }}
+              protocol: TCP

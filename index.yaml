@@ -1,5 +1,24 @@
 apiVersion: v1
 entries:
+  basic-test:
+  - annotations:
+      catalog.cattle.io/certified: rancher
+      catalog.cattle.io/kube-version: '>= 1.25.0-0 < 1.37.0-0'
+      catalog.cattle.io/managed: "true"
+      catalog.cattle.io/os: linux
+      catalog.cattle.io/permits-os: linux,windows
+      catalog.cattle.io/release-name: basic-test
+    apiVersion: v1
+    appVersion: v0.19.1
+    created: "2026-06-12T10:52:10.953191-04:00"
+    description: testing
+    digest: d5cbbca7f9bbe4022e48b39614dc1628de0dcb404b56fdd8cf2dc4f47dd40a4d
+    home: https://github.com/rancher/system-upgrade-controller
+    kubeVersion: '>= 1.25.0-0'
+    name: basic-test
+    urls:
+    - assets/basic-test/basic-test-110.0.0.tgz
+    version: 110.0.0
   elemental:
   - annotations:
       catalog.cattle.io/auto-install: elemental-crd=match
